@@ -19,8 +19,8 @@ namespace SidecarProxy.HttpHandlers
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            request.Headers.Add("Injected-Header-One", "DeepakDagar");
-            request.Headers.Add("Injected-Header-Two", "DeepakDagar1");
+            request.Headers.Add("Header-One", "DeepakDagar");
+            request.Headers.Add("Header-Two", "DeepakDagar1");
             return await base.SendAsync(request, cancellationToken);
         }
     }
