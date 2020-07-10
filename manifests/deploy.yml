@@ -16,7 +16,7 @@ spec:
         image: saxo01.azurecr.io/demoapi:v1
         # ports:
         # - containerPort: 81
-      - name: sidecar-conatiner
+      - name: sidecar-container
         image: saxo01.azurecr.io/sidecar:v1
         env:
           - name: DEMOAPI_PORT
