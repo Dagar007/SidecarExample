@@ -1,0 +1,16 @@
+bin
+obj
+.DS_Store
+appsettings.json
+*.db
+publish
+.db
+.sqlite
+.vs
+
+.db
+.sqlite
+.vs
+*.cache
+*.bat
+**/aws-logger-errors.txt

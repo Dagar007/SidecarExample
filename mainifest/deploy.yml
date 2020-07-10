@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sidecar-deployment
+spec:
+  selector:
+    matchLabels:
+      app: sidecar-pod
+  template:
+    metadata:
+      labels:
+        app: sidecar-pod
+    spec:
+      containers:
+      - name: demoapi-container
+        image: saxo01.azurecr.io/demoapi:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        # ports:
+        # - containerPort: 81
+      - name: sidecar-conatiner
+        image: saxo01.azurecr.io/sidecar:v1
+        env:
+          - name: DEMOAPI_PORT
+            value: "81"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 80
+
+          
