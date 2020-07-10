@@ -16,5 +16,13 @@ namespace DemoAPI.Controllers
         {
             return Request.Headers.Select(h => new { Title = h.Key, Values = h.Value.ToString() }).ToList<object>();
         }
+
+        [HttpGet("test")]
+        public string  Test ()
+        {
+            return DateTime.Now.ToString();
+        }
     }
+
+    
 }
